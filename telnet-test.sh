@@ -24,7 +24,7 @@ set user admin
 set pass admin
 ###		for expect debugging uncomment next line
 #exp_internal 1 
-set timeout -1
+
 set ipaddr $ip
 spawn telnet $ip
 sleep 3
