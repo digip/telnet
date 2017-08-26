@@ -41,7 +41,7 @@ sleep 3
 expect -re {
 	timeout { ### if timeout, log timeout
 	set outputFilename "open-telnet.txt"
-	set outFileId [open \$outputFilename "w"]
+	set outFileId [open \$outputFilename "a"]
 	puts -nonewline \$outFileId "\$ipaddr - Timed Out\n"
 	close \$outFileId
 	}
@@ -60,7 +60,7 @@ expect -glob "*#" {
 	sleep 2
 	expect -glob "*xi*"
 	set outputFilename "open-telnet.txt"
-	set outFileId [open \$outputFilename "w"]
+	set outFileId [open \$outputFilename "a"]
 	puts -nonewline \$outFileId "\$ipaddr - \$user:\$pass\n"
 	close \$outFileId
 
