@@ -64,18 +64,6 @@ expect -glob "*#" {
 	puts -nonewline \$outFileId "\$ipaddr - \$user:\$pass\n"
 	close \$outFileId
 
-} 
-
-	###if no password found, we log bad responses
-expect -glob "*assword\r*" {
-	sleep 2
-	set timeout 1
-	send "\r\n\r\n\r\n"
-	sleep 2
-	set outputFilename "open-telnet.txt"
-	set outFileId [open \$outputFilename "w"]
-	puts -nonewline \$outFileId "\$ipaddr - bad password\n"
-	close \$outFileId
 }
 
 EOF
